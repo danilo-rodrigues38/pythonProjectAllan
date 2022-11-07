@@ -8,9 +8,9 @@ print('*' * 50)
 print(' ')
 for cont in range(0, 7):
     aulas = list()
-    chave = str(input('Digite o dia da semana: ')).capitalize().strip()
+    chave = str(input('Digite o dia da semana: ')).strip().title()
     while True:
-        valor = str(input(f'Digite as aulas que você tem na {chave}: ')).capitalize().strip()
+        valor = str(input(f'Digite as aulas que você tem na {chave}: ')).strip().title()
         aulas.append(valor)
         resp = str(input('\nQuer acrescentar mais alguma aula? [S/N]: ')).upper().strip()
         if resp == 'N':
