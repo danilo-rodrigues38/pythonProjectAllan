@@ -1,24 +1,28 @@
-# Crie um dicionário vazio semana = {} e o complete com uma chave para cada dia da semana,
-# tendo como seu valor uma lista com as aulas que você tem nesse dia (sábado e domingo recebem
-# listas vazias, ou você tem aula?).
+''' Para uma lista de 10 inteiros, elaborar um programa em Python para ordenar os elementos na lista na ordem crescente
+(PROIBIDO O USO DE QUALQUER RECURSO/BIBLIOTECA/MÉTODO PRONTO DA LINGUAGEM).
+O aluno deve elaborar ou utilizar um algoritmo para isso. (Bolha, Inserção, Seleção, Quick, Merge....) '''
 
-semana = dict()
-print('CALENDÁRIO SEMANAL'.center(50))
-print('*' * 50)
-print(' ')
-for cont in range(0, 7):
-    aulas = list()
-    chave = str(input('Digite o dia da semana: ')).strip().title()
-    while True:
-        valor = str(input(f'Digite as aulas que você tem na {chave}: ')).strip().title()
-        aulas.append(valor)
-        resp = str(input('\nQuer acrescentar mais alguma aula? [S/N]: ')).upper().strip()
-        if resp == 'N':
-            break
-    semana[chave] = aulas[:]
-    aulas.clear()
-print('RELATÓRIO DAS ATIVIDADES SEMANAIS'.center(50))
-print('*' * 50)
-print(' ')
-for c, v in semana.items():
-    print(f'Na {c}, temos:{v}\n')
+from random import randint
+from time import sleep
+
+cont = indice = aux = 0
+
+lista = list()
+
+num = int(input('\nQuantos números aleatórios quer na lista: '))
+for cont in range(0, num):
+    lista.append(randint(0, 100))
+print('\nOs números sorteados foram: ')
+for cont in lista:
+    print(f'{cont} ', end='')
+for c in range(0, len(lista) - 1):
+    for i in range(c + 1, len(lista)):
+        if lista[c] > lista[i]:
+            aux = lista[c]
+            lista[c] = lista[i]
+            lista[i] = aux
+print('\n\nOs números na ordem crescente são: ')
+for cont in lista:
+    print(f'{cont} ', end='')
+    sleep(0.3)
+print('\n\nFIM DO PROGRAMA!!!')
