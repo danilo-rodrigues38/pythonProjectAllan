@@ -1,5 +1,7 @@
-print("Verificador de CPF")
-print('Informe o CPF sem pontos e traços.')
+print('\n')
+print("Verificador de CPF".center(40))
+print('~' * 40)
+print('\nInforme o CPF sem pontos e traços.\n')
 cpf = str(input('Digite o número do CPF: ')).strip()
 c = i = res1 = res2 = verificador1 = verificador2 = 0
 
@@ -15,8 +17,8 @@ if len(cpf) == 11:
         i += 1
     verificador2 = (res2 * 10) % 11
     if (verificador1 != int(cpf[-2])) and (verificador2 != int(cpf[-1])):
-        print('CPF digitado é inválido!!!')
+        print('\nCPF digitado é inválido!!!\n')
     else:
-        print('O CPF é válido!!!+')
+        print('\nO CPF é válido!!!\n')
 else:
-    print('CPF digitado é inválido!!!')
+    print('\nCPF digitado é inválido!!!\n')
